@@ -1,0 +1,17 @@
+###################################
+####  Sunset lights outside off
+###################################
+
+- alias: 'Sunset landscapes lights off'
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: '-02:00:00'
+
+  action:
+    - delay: '00:{{ (range(1, 55)|random|int) }}:00'
+    - service: light.turn_off
+      entity_id:
+        - light.baksidan
+        - light.garage_porten
+        - light.lampabron
