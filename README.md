@@ -3,7 +3,7 @@
 [Home Assistant](https://home-assistant.io/) configuration files (YAMLs)
 
 
-This is the configuration I'm using live in my house running on a RaspberryPi 3 running the new [Hass.IO 1.0](https://home-assistant.io/hassio/)
+This is the configuration I'm using live in my house running on a RaspberryPi 3 running the new [Hass.IO](https://home-assistant.io/hassio/)
 
 
 Devicer I have connected.
