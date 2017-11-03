@@ -1,0 +1,19 @@
+bjorns_status:
+  name: Bjorns Status
+  options:
+   - "Home"
+   - "Work"
+   - "Away"
+   - "Sleeping"
+  initial: "Home"
+####
+avr_input:
+  name: AVR Input
+  options:
+  - Chromecast
+  - KODI
+  - HA
+  - PC
+  - Standby
+  initial: Standby
+  icon: mdi:TV

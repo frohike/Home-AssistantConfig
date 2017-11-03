@@ -1,0 +1,126 @@
+############ 3D Printing Octoprint #######################
+    sensor.octoprint_actual_bed_temp:
+      friendly_name: Bed Currently
+      icon: mdi:thermometer
+    sensor.octoprint_actual_tool0_temp:
+      friendly_name: Hot End Currently
+      icon: mdi:thermometer
+    sensor.octoprint_current_state:
+      icon: mdi:printer-3d
+    binary_sensor.octoprint_printing:
+      hidden: yes
+    binary_sensor.octoprint_printing_error:
+      icon: mdi:alert
+      friendly_name: Error
+    sensor.octoprint_job_percentage:
+      icon: mdi:percent
+      friendly_name: Job Percentage
+    sensor.octoprint_target_bed_temp:
+      friendly_name: Bed Target
+      icon: mdi:thermometer
+    sensor.octoprint_target_tool0_temp:
+      friendly_name: Hot End Target
+      icon: mdi:thermometer
+    sensor.octoprint_temperatures:
+      hidden: yes
+
+########CUSTOMIZE DEVICES########
+    device_tracker.pi_nexus5x:
+       entity_picture:  /local/bjorns.jpg
+       friendly_name: Björn
+
+######CUSTOMIZE MEDIA PLAYERS######
+    media_player.chromecastaudiokitchen:
+       friendly_name: Cast Audio I köket
+       icon: mdi:google-chrome
+    media_player.bjornecast:
+       friendly_name: Chromecast sovrummet
+       icon: mdi:google-chrome
+    media_player.vardagsrums_tv:
+       friendly_name: Samsung TV i Vardagsrummet
+       icon: mdi:projector-screen
+    media_player.kodivardagsrum:
+       friendly_name: Kodi koplad till TV i vardags rummet
+       icon: mdi:projector-screen
+#######CUSTOMIZE SWITCHES########
+####RF####
+    switch.vardagsrumfonster:
+       friendly_name: Vardagsrums Fönster
+       icon: mdi:lightbulb
+    switch.vardagsrumgolvlampa:
+       friendly_name: Vardagsrum Golvlampa
+       icon: mdi:lightbulb
+    switch.vardagsrumvitrinskap:
+       friendly_name: Vardagsrum Vitrinskåp
+       icon: mdi:lightbulb
+    switch.skapetvardagsrummet:
+       friendly_name: Vardagsrum Display Skåp
+       icon: mdi:lightbulb
+    switch.adventsstackar_vrum:
+       friendly_name: Julgran's Belysning
+       icon: mdi:pine-tree
+#### Hallen ########
+    switch.hallenvagg:
+       friendly_name: Vägg lampa i hallen
+       icon: mdi:lamp
+#### Sovrummet #########
+    switch.sovrummetfonster:
+       friendly_name: Sovrum's Fönster
+       icon: mdi:lamp
+##### Köket #############
+    switch.koketfonster:
+       friendly_name: Kök's Fönster lampor
+       icon: mdi:lamp
+    switch.kokhornskap:
+       friendly_name: Kök Hörnskåpet
+       icon: mdi:lightbulb
+    switch.koksbanken:
+       friendly_name: Kök's Bänk belysning
+       icon: mdi:lightbulb
+    switch.koksfonster_jul:
+       friendly_name: Kök's Adventsstake
+       icon: mdi:lamp
+### Kontoret ###############
+    switch.kontoretfonster:
+       friendly_name: Kontor's Fönster
+       icon: mdi:lamp
+    switch.wanhao_duplicator_i3:
+       friendly_name: Original Prusa i3 MK2
+       icon: mdi:printer-3d
+######## Utomhus Belysning ##########
+    switch.lampautebaksidan:
+       friendly_name: Lampa på baksidan
+       icon: mdi:lamp
+    switch.utomhusaltanen:
+       friendly_name: Julbelysnign på altanen
+       icon: mdi:led-variant-outline
+    light.hue_white_lamp_1:
+       friendly_name: LampaVinden1
+       icon: mdi:lamp
+    light.hue_white_lamp_2:
+       friendly_name: LampaVinden2
+       icon: mdi:lamp
+    light.tradfri_bulb_e14_ws_opal_400lm_2:
+       friendly_name: Sovrums Fönster
+       icon: mdi:lamp
+    light.tradfri_bulb_e14_ws_opal_400lm_3:
+       friendly_name: Kök bordslampa
+       icon: mdi:lamp
+
+##############HA####
+    input_boolean.ha_uptime:
+      hidden: yes
+    group.all_switches:
+      hidden: no
+    group.input_boolean:
+      hidden: no
+    group.all_automations:
+      hidden: no
+    group.all_covers:
+      hidden: no
+    group.all_lights:
+      hidden: no
+    group.all_scripts:
+      hidden: no
+    group.all_devices:
+      hidden: no

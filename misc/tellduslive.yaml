@@ -1,0 +1,4 @@
+  public_key: !secret tellduslive_public_key
+  private_key: !secret tellduslive_private_key
+  token: !secret tellduslive_token
+  token_secret: !secret tellduslive_token_secret

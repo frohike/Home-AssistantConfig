@@ -1,0 +1,3 @@
+entities:
+  - name: Octoprint Web UI
+    url: !secret octoprint_ip_http
