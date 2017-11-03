@@ -1,0 +1,124 @@
+- id: a_away_bjorn
+  alias: Away Bjorn
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: input_select.bjorn_status
+    from: Home
+    to: Away
+  action:
+  - service: notify.bjorn
+    data_template:
+      title: Bjorn is Leaving
+      message: Bjorn is now {{states.input_select.bjorn_status.state}}
+- id: a_sunrise_utomhus
+  alias: Sunrise Utomhus
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+  - service: light.turn_off
+    data:
+      entity_id:
+      - light.baksidan
+      - light.garage_porten
+      - light.lampabron
+- id: a_sunset_utomhus
+  alias: Sunset Utomhus
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+  - service: light.turn_on
+    data:
+      entity_id:
+      - light.baksidan
+      - light.garage_porten
+      - light.lampabron
+- id: a_sunset_inne
+  alias: Sunset Inne
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - event: sunset
+    offset: -0:20:00
+    platform: sun
+  action:
+  - data:
+      entity_id:
+      - switch.kontoretfonster
+      - switch.koketfonster
+      - switch.hallenvagg
+    service: switch.turn_on
+  - data:
+      entity_id:
+      - light.sovrummsfonster
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+    service: light.turn_on
+- action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.wanhao_duplicator_i3
+  alias: 3D Printer Finish Off
+  id: '1501839329261'
+  trigger:
+  - entity_id: sensor.octoprint_job_percentage
+    platform: state
+    to: '100'
+    for:
+      minutes: 5
+- action:
+  - data:
+      entity_id:
+      - light.sovrummsfonster
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+    service: light.turn_on
+  - data:
+      entity_id:
+      - switch.koksbanken
+      - switch.kokhornskap
+      - switch.koketfonster
+      - switch.hallenvagg
+    service: switch.turn_on
+  alias: wakeup
+  condition:
+  - before: sunrise
+    condition: sun
+  - weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    condition: time
+  id: '1504293597080'
+  trigger:
+  - at: 05:25
+    platform: time
+- action:
+  - data:
+      entity_id:
+      - switch.koksbanken
+      - switch.kokhornskap
+      - switch.koketfonster
+      - switch.hallenvagg
+    service: switch.turn_off
+  - data:
+      entity_id:
+      - light.sovrummsfonster
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+    service: light.turn_off
+  alias: Go To work
+  condition: []
+  id: '1504116349611'
+  trigger:
+  - at: 07:00
+    platform: time
