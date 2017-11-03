@@ -1,0 +1,73 @@
+name: Alarm Panel
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+#pan_zoom:
+hide_app_toolbar:
+date_format: DD-MMM-YYYY
+
+# Example of chaining for multiple replaces.
+# '${entity.state ? entity.state.replace("not_home", "away").replace("Miguel_Work", "At Work") : "undefined"}'
+
+groups:
+
+  - name: temp_outside
+    entities:
+      - sensor.utomhus_temperature
+    text_template: '${entity.state ? Math.ceil(entity.state) + "C°": "undefined"}'
+    class_template: 'return "static-temp";'
+  
+  - name: temp_bedroom
+    entities:
+      - sensor.sn1_temperature
+    text_template: '${entity.state ? Math.ceil(entity.state) + "C°": "undefined"}'
+    class_template: 'return "static-temp";'
+
+  - name: Camera
+    entities:
+      - camera.octoprint
+    states:
+      - state: 'idle'
+        class: 'text-home'
+
+  - name: text_font_date
+    entities:
+      - sensor.floorplan_date
+    text_template: '${entity.state ? entity.state : "undefined"}'
+    class_template: 'return "static-text-date";'
+
+  - name: text_font_time
+    entities:
+      - sensor.floorplan_time
+    text_template: '${entity.state ? entity.state : "undefined"}'
+    class_template: 'return "static-text-time";'
+
+  - name: Family
+    entities:
+      - device_tracker.pi_nexus5x
+    text_template: '${entity.state ? entity.state.replace("not_home", "away") : "undefined"}'
+
+    states:
+      - state: 'home'
+        class: 'text-home'
+      - state: 'not_home'
+        class: 'text-away'
+
+- name: Lights
+    entities:
+      - light.baksidan
+      - light.garage_porten
+      - light.labtak1
+      - light.labtak2
+      - light.lampabron
+      - light.tradfri_bulb_e14_ws_opal_400lm_2
+      - light.tradfri_bulb_e14_ws_opal_400lm_3
+      - light.vardagarummet_golv
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: toggle
