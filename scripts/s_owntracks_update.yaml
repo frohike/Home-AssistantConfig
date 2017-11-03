@@ -1,0 +1,6 @@
+owntracks_update:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: owntracks/pi/nexus5x/cmd 
+        payload: '{"_type":"cmd","action":"reportLocation"}"'
