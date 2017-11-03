@@ -1,0 +1,297 @@
+  bedroom_lights_card:
+    name: Bedroom
+    entities:
+      - light.sovrummsfonster
+      - light.taksovrummet
+      - sensor.sn1_temperature
+      - sensor.sn1_pir
+      - sensor.sn1_humidity
+
+  bjorn_locations_card:
+    name: Bjorn Location
+    entities:
+      - script.owntracks_update
+      - device_tracker.pi_nexus5x
+      - sensor.bjorn_n5x_battery
+      - input_select.bjorn_status
+
+  global_scenes_card:
+    name: Global Scenes
+    entities:
+      - script.lights_all_off
+      - script.lights_all_on
+      - script.bedtime
+      - script.goodmorning
+
+  humidity_card:
+    name: Humidities
+    entities:
+      - sensor.kn_humidity
+      - sensor.sn1_humidity
+      - sensor.owm_humidity
+
+  kitchen_lights_card:
+    name: Kitchen Lights
+    entities:
+      - switch.koketfonster
+      - switch.kokhornskap
+      - switch.koksbanken
+      - switch.koksfonster_jul
+      - group.kitchen_table_lamp
+
+  kitchen_table_lamp:
+    name: Köks bords Lampa
+    entities:
+      - light.koksbordslampa1
+      - light.koksbordslampa2
+      - light.koksbordslampa3
+
+  kitchen_sensors:
+    name: Kitchen Sensors
+    entities:
+      - sensor.kn_temperature
+      - sensor.kn_humidity
+      - sensor.kn_pir
+
+  lab_lights_card:
+    name: Lab Lights
+    entities:
+      - group.lab_tak_lampa
+      - light.labtak1
+      - light.labtak2
+      - light.labtak3
+      - switch.kontoretfonster
+
+  lab_switches_card:
+    name: Lab Switches
+    entities:
+      - switch.wanhao_duplicator_i3
+
+  lab_tak_lampa:
+    name: Tak Lampa Labbet
+    entities:
+      - light.labtak1
+      - light.labtak2
+      - light.labtak3
+
+  living_room_lights_card:
+    name: Living Room Lights
+    entities:
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+      - switch.vardagsrumgolvlampa
+      - switch.vardagsrumvitrinskap
+      - switch.skapetvardagsrummet
+      - switch.adventsstackar_vrum
+      - light.vardagarummet_golv
+      - switch.hallenvagg
+
+  living_room_devices_card:
+    name: Living Room Devices
+    entities:
+      - media_player.samsung_led55_ue55h6200
+      - media_player.kodiVardagsrum
+
+  octoprint_status_card:
+    name: 3D Printer Status
+    entities:
+      - switch.wanhao_duplicator_i3
+      - sensor.octoprint_current_state
+      - binary_sensor.octoprint_printing
+      - binary_sensor.octoprint_printing_error
+      - sensor.octoprint_job_percentage
+      - sensor.octoprint_target_bed_temp
+      - sensor.octoprint_actual_bed_temp
+      - sensor.octoprint_target_tool0_temp
+      - sensor.octoprint_actual_tool0_temp
+      - weblink.octoprint_web_ui
+      - camera.octoprint
+
+  outside_lights_backdoor_card:
+    name: Backyard Lights
+    entities:
+      - light.baksidan
+
+  outside_lights_frontdoor_card:
+    name: Porch Lights
+    entities:
+      - light.lampabron
+      - light.garage_porten
+
+  sensor_node_1_card:
+    name: Sensor Node 1
+    entities:
+      - sensor.sn1_temperature
+      - sensor.sn1_humidity
+      - sensor.sn1_ldr
+      - sensor.sn1_pir
+
+  Kitchen_node_card:
+    name: Kitchen Node
+    entities:
+      - sensor.kn_temperature
+      - sensor.kn_humidity
+      - sensor.kn_ldr
+      - sensor.kn_pir
+
+  system_lockouts_card:
+    name: System Lockouts
+    entities:
+      - input_boolean.presence_lockout
+      - input_boolean.presence_armed
+      - input_boolean.sleep_lockout
+      - input_boolean.motion_lockout
+      - input_boolean.media_lockout
+
+  system_sensors_card:
+    name: System Sensors
+    entities:
+      - sensor.connected_clients
+
+  time_travel_card:
+    name: Time To Destination
+    entities:
+      - sensor.gm_bjorn_to_work
+      - sensor.gm_bjorn_to_home
+
+  temperatures_card:
+    name: Temperatures
+    entities:
+      - sensor.kn_temperature
+      - sensor.sn1_temperature
+      - sensor.utomhus_temperature
+      - sensor.vardagsrummet_temperature
+      - sensor.owm_temperature
+
+  weather_card:
+    name: Weather
+    entities:
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_cloud_coverage
+      - sensor.dark_sky_daily_high_apparent_temperature
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_apparent_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.dark_sky_daily_max_precip_intensity
+      - sensor.dark_sky_daily_summary
+      - sensor.dark_sky_hourly_summary
+      - sensor.dark_sky_humidity
+      - sensor.dark_sky_icon
+      - sensor.dark_sky_minutely_summary
+      - sensor.dark_sky_nearest_storm_distance
+      - sensor.dark_sky_ozone
+      - sensor.dark_sky_precip
+      - sensor.dark_sky_precip_intensity
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_pressure
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - sensor.dark_sky_visibility
+      - sensor.dark_sky_wind_bearing
+      - sensor.dark_sky_wind_speed
+      - sun.sun
+
+  time_card:
+      - sensor.time
+      - sensor.time__date
+      - sensor.time_utc
+      - sensor.date
+      - sensor.date__time
+
+  bedroom_view:
+    name: Bedroom
+    view: yes
+    entities:
+      - group.bedroom_lights_card
+      - group.bedroom_sensors_card
+      - group.alarm_clock_card
+      - media_player.bjornecast
+      - script.bedtime
+
+  climate_view:
+    name: Climate
+    view: yes
+    entities:
+      - group.temperatures_card
+      - group.humidity_card
+      - camera.radar
+      - group.weather_card
+      - group.ecobee_card
+      - group.ecobee_card_upstairs
+
+  family_view:
+    name: Family
+    view: yes
+    entities:
+      - group.bjorn_phone_sensors
+      - group.time_travel_card
+      - group.bjorn_locations_card
+      - group.tracker_ble_happy_bubbles_card
+
+  kitchen_view:
+    name: Kitchen
+    view: yes
+    entities:
+      - group.kitchen_lights_card
+      - group.kitchen_sensors
+      - group.laundry_card
+      - group.sense_card
+      - media_player.chromecastaudiokitchen
+
+  lab_view:
+    name: Lab
+    view: yes
+    entities:
+      - group.lab_lights_card
+      - group.lab_switches_card
+      - group.strip_cord_card
+      - group.octoprint_status_card
+      - group.fibaro_multisensor_card
+      - group.sensor_node_1_card
+      - media_player.lab
+      - cover.blinds1
+      - group.blinds_card
+      - group.pir_card
+
+  living_room_view:
+    name: Living Room
+    view: yes
+    entities:
+      - group.living_room_lights_card
+      - group.living_room_devices_card
+      - group.living_room_sensors
+      - group.media_equipment_card
+      - media_player.samsung_led55_ue55h6200
+      - media_player.kodiVardagsrum
+      - media_player.kodi
+
+  outside_view:
+    name: Outside
+    view: yes
+    entities:
+      - group.outside_lights_backdoor_card
+      - group.outside_lights_frontdoor_card
+
+  admin_view:
+    name: Admin
+    view: yes
+    entities:
+      - group.system_lockouts_card
+      - group.system_sensors_card
+      - group.all_switches
+      - group.input_boolean
+      - group.all_switches
+      - group.all_automations
+      - group.all_covers
+      - group.all_lights
+      - group.all_scripts
+      - group.all_devices
+
+  default_view:
+    view: yes
+    entities:
+      - group.weather_card
+      - group.bjorn_locations_card
+      - group.temperatures_card
+      - group.octoprint_status_card
+      - sensor.octoprint_job_percentage

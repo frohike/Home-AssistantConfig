@@ -1,0 +1,4 @@
+platform: tradfri
+host: !secret tradfri_ip
+api_key: !secret tradfri_api
+allow_tradfri_groups: true
