@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "owntracks/pi/nexus5x"
+name: "Bjorn N5X Battery"
+unit_of_measurement: "%"
+value_template: "{{ value_json.batt }}"

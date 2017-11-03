@@ -1,0 +1,5 @@
+platform: google_travel_time
+name: GM Bjorn To Home
+api_key: !secret google_travel_api
+origin: device_tracker.pi_nexus5x
+destination: !secret google_travel_home

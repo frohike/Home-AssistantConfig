@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "home-assistant/sensornode1"
+name: "SN1 LDR"
+unit_of_measurement: "LUX"
+value_template: '{{ value_json.ldr }}'
