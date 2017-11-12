@@ -1,0 +1,11 @@
+platform: radarr
+api_key: !secret radarr_api
+host: 192.168.0.20
+port: 7878
+monitored_conditions:
+  - upcoming
+  - movies
+  - status
+  - diskspace
+days: 10
+unit: TB

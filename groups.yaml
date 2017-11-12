@@ -113,13 +113,13 @@
       - light.baksidan
 
   outside_lights_frontdoor_card:
-    name: Porch Lights
+    name: Front of house Lights
     entities:
       - light.lampabron
       - light.garage_porten
 
   sensor_node_1_card:
-    name: Sensor Node 1
+    name: BedRoom Sensor Node
     entities:
       - sensor.sn1_temperature
       - sensor.sn1_humidity
@@ -127,7 +127,7 @@
       - sensor.sn1_pir
 
   Kitchen_node_card:
-    name: Kitchen Node
+    name: Kitchen Sensor Node
     entities:
       - sensor.kn_temperature
       - sensor.kn_humidity
@@ -149,7 +149,7 @@
       - sensor.connected_clients
 
   time_travel_card:
-    name: Time To Destination
+    name: Travel Sensors
     entities:
       - sensor.gm_bjorn_to_work
       - sensor.gm_bjorn_to_home
@@ -198,6 +198,18 @@
       - sensor.date
       - sensor.date__time
 
+  sonarr_card:
+    name: Sonarr TvShows
+    entities:
+      - sensor.sonarr_upcoming
+      - sensor.sonarr_disk_space
+
+  radarr_card:
+    name: Radarr Movies
+    entities:
+      - sensor.radarr_upcoming
+      - sensor.radarr_disk_space
+
   bedroom_view:
     name: Bedroom
     view: yes
@@ -207,6 +219,45 @@
       - group.alarm_clock_card
       - media_player.bjornecast
       - script.bedtime
+
+  lab_view:
+    name: Lab
+    view: yes
+    entities:
+      - group.lab_lights_card
+      - group.lab_switches_card
+      - group.strip_cord_card
+      - group.octoprint_status_card
+      - group.fibaro_multisensor_card
+      - group.sensor_node_1_card
+      - media_player.lab
+      - cover.blinds1
+      - group.blinds_card
+      - group.pir_card
+
+  kitchen_view:
+    name: Kitchen
+    view: yes
+    entities:
+      - group.kitchen_lights_card
+      - group.kitchen_sensors
+      - group.laundry_card
+      - group.sense_card
+      - media_player.chromecastaudiokitchen
+
+  living_room_view:
+    name: Living Room
+    view: yes
+    entities:
+      - group.living_room_lights_card
+      - group.living_room_devices_card
+      - group.living_room_sensors
+      - group.media_equipment_card
+      - group.sonarr_card
+      - group.radarr_card
+      - media_player.samsung_led55_ue55h6200
+      - media_player.kodiVardagsrum
+      - media_player.kodi
 
   climate_view:
     name: Climate
@@ -227,43 +278,6 @@
       - group.time_travel_card
       - group.bjorn_locations_card
       - group.tracker_ble_happy_bubbles_card
-
-  kitchen_view:
-    name: Kitchen
-    view: yes
-    entities:
-      - group.kitchen_lights_card
-      - group.kitchen_sensors
-      - group.laundry_card
-      - group.sense_card
-      - media_player.chromecastaudiokitchen
-
-  lab_view:
-    name: Lab
-    view: yes
-    entities:
-      - group.lab_lights_card
-      - group.lab_switches_card
-      - group.strip_cord_card
-      - group.octoprint_status_card
-      - group.fibaro_multisensor_card
-      - group.sensor_node_1_card
-      - media_player.lab
-      - cover.blinds1
-      - group.blinds_card
-      - group.pir_card
-
-  living_room_view:
-    name: Living Room
-    view: yes
-    entities:
-      - group.living_room_lights_card
-      - group.living_room_devices_card
-      - group.living_room_sensors
-      - group.media_equipment_card
-      - media_player.samsung_led55_ue55h6200
-      - media_player.kodiVardagsrum
-      - media_player.kodi
 
   outside_view:
     name: Outside
@@ -290,8 +304,9 @@
   default_view:
     view: yes
     entities:
-      - group.weather_card
       - group.bjorn_locations_card
+      - group.time_travel_card
       - group.temperatures_card
       - group.octoprint_status_card
       - sensor.octoprint_job_percentage
+      - group.weather_card

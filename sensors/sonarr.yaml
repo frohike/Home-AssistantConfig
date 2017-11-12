@@ -1,0 +1,12 @@
+platform: sonarr
+api_key: !secret sonarr_api
+host: 192.168.0.20
+port: 8989
+monitored_conditions:
+  - upcoming
+  - series
+  - wanted
+  - queue
+  - diskspace
+days: 2
+unit: TB
