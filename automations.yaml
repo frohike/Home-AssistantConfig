@@ -87,17 +87,17 @@
       - switch.koketfonster
       - switch.hallenvagg
     service: switch.turn_on
-  alias: wakeup
+  alias: wakeup_weekdays
   condition:
   - before: sunrise
     condition: sun
-  - weekday:
+  - condition: time
+    weekday:
     - mon
     - tue
     - wed
     - thu
     - fri
-    condition: time
   id: '1504293597080'
   trigger:
   - at: 05:25
@@ -119,6 +119,32 @@
   alias: Go To work
   condition: []
   id: '1504116349611'
+  trigger:
+  - at: 07:00
+    platform: time
+- action:
+  - data:
+      entity_id:
+      - light.sovrummsfonster
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+    service: light.turn_on
+  - data:
+      entity_id:
+      - switch.koksbanken
+      - switch.kokhornskap
+      - switch.koketfonster
+      - switch.hallenvagg
+    service: switch.turn_on
+  alias: wakeup_weekend
+  condition:
+  - before: sunrise
+    condition: sun
+  - condition: time
+    weekday:
+    - sat
+    - sun
+  id: '1510410118180'
   trigger:
   - at: 07:00
     platform: time
