@@ -1,0 +1,149 @@
+page_id: Alarm Panel
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+
+date_format: DD-MMM-YYYY
+
+# Example of chaining for multiple replaces.
+# '${entity.state ? entity.state.replace("not_home", "away").replace("Miguel_Work", "At Work") : "undefined"}'
+
+rules:
+
+  - name: temp_outside
+    entities:
+      - sensor.utomhus_temperature
+    text_template: '${entity.state ? Math.ceil(entity.state) + "C°": "undefined"}'
+    class_template: 'return "static-temp";'
+
+  - name: temp_bedroom
+    entities:
+      - sensor.sn1_temperature
+    text_template: '${entity.state ? Math.ceil(entity.state) + "C°": "undefined"}'
+    class_template: 'return "static-temp";'
+
+  - name: temp_round
+    entities:
+      - sensor.sn1_humidity
+      - sensor.sovrummet_humidity
+      - sensor.utomhus_humidity
+      - sensor.dark_sky_humidity
+    text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
+    class_template: 'return "static-temp";'
+
+
+  - name: Camera
+    entities:
+      - camera.octoprint
+    states:
+      - state: 'idle'
+        class: 'text-home'
+
+  - name: text_font_date
+    entities:
+      - sensor.floorplan_date
+    text_template: '${entity.state ? entity.state : "undefined"}'
+    class_template: 'return "static-text-date";'
+
+  - name: text_font_time
+    entities:
+      - sensor.floorplan_time
+    text_template: '${entity.state ? entity.state : "undefined"}'
+    class_template: 'return "static-text-time";'
+
+  - name: Family
+    entities:
+      - device_tracker.homeassistant_nexus5x
+    text_template: '${entity.state ? entity.state.replace("not_home", "away") : "undefined"}'
+
+    states:
+      - state: 'home'
+        class: 'text-home'
+      - state: 'not_home'
+        class: 'text-away'
+
+  - name: Lights
+    entities:
+      - light.baksidan
+      - light.garage_porten
+      - light.labtak1
+      - light.labtak2
+      - light.lampabron
+      - light.koksbordslampa1
+      - light.koksbordslampa2
+      - light.koksbordslampa3
+      - light.labtak1
+      - light.labtak2
+      - light.labtak3
+      - switch.kontoretfonster
+      - switch.wanhao_duplicator_i3
+      - light.sovrummsfonster
+      - light.taksovrummet
+      - light.toa_belysning
+      - light.vardagarummet_golv
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+      - switch.golvlampavardagsrum
+      - switch.skapetvardagsrummet
+      - switch.vardagsrumgolvlampa
+      - switch.vardagsrumvitrinskap
+      - switch.hallenvagg
+      - switch.koketfonster
+      - switch.kokhornskap
+      - switch.koksbanken
+      - switch.omstarttelldus
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: toggle
+
+
+  - name: Dark Sky Sensors
+    entities:
+      - entity: sensor.dark_sky_hourly_summary
+        element: sensor.dark_sky_icon
+
+    image_template: '
+      var imageName = "";
+
+      switch (entity.attributes.entity_picture) {
+        case "/static/images/darksky/weather-sunny.svg":
+          imageName = "sunny-1";
+          break;
+
+        case "/static/images/darksky/weather-night.svg":
+          imageName = "night-1";
+          break;
+
+        case "/static/images/darksky/weather-partlycloudy.svg":
+          imageName = "partlycloudy-day-1";
+          break;
+
+        case "/static/images/darksky/weather-cloudy.svg":
+          imageName = "partlycloudy-night-1";
+          break;
+
+        case "/static/images/darksky/weather-cloudy.svg":
+          imageName = "cloudy-day-1";
+          break;
+
+        case "/static/images/darksky/weather-pouring.svg":
+          imageName = "thunder";
+          break;
+
+        case "/static/images/darksky/weather-snowy.svg":
+          imageName = "snowy-day-1";
+          break;
+      }
+
+      return "/local/custom_ui/floorplan/images/weather/" + imageName + ".svg";
+      '
+
+  - name: Camera Images
+    entities:
+      - camera.camera.octoprint
+    camera_image_template: '${entity.attributes.entity_picture}'

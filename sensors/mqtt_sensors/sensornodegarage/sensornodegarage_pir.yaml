@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "home-assistant/sensornodegaraget"
+  name: "Garage PIR"
+  value_template: '{{ value_json.motion }}'

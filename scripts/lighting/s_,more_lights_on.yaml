@@ -1,0 +1,6 @@
+more_lights_on:
+  sequence:
+    - service: group.turn_on
+      data:
+        entity_id: group.kitchen_lights_card
+        transition: 15

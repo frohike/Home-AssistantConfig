@@ -1,0 +1,14 @@
+date_format: MMM-DD-YYYY
+#log_level: debug
+
+fully_kiosk:
+
+  - name: Alarm Panel
+    address: 50:46:5d:10:9e:99
+    motion_sensor: binary_sensor.alarm_motion
+    plugged_sensor: binary_sensor.alarm_plugged
+    screensaver_light: light.alarm_screensaver
+    media_player: media_player.alarm_alarm_panel
+
+pages:
+- /local/custom_ui/floorplan/alarm.yaml

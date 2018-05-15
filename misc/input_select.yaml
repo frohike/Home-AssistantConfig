@@ -1,11 +1,12 @@
-bjorns_status:
-  name: Bjorns Status
+bjorn_status:
+  name: Bjorn Status
   options:
    - "Home"
    - "Work"
    - "Away"
    - "Sleeping"
   initial: "Home"
+  icon: mdi:biohazard
 ####
 avr_input:
   name: AVR Input

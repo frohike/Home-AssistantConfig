@@ -1,3 +1,11 @@
+############################################################
+#
+# Logger  You can filter anything betwen the []'s in the logger.
+#
+############################################################
+
+# Log Severities: notset, debug, info, warn, warning, error, fatal, critical
+
 default: info
 logs:
   homeassistant.core: error
@@ -11,6 +19,8 @@ logs:
   homeassistant.components.sensor.darksky: warn
   homeassistant.components.zwave: warn
   homeassistant.helpers.script: info
+  homeassistant.components.mqtt: warn
   homeassistant.exceptions: info
+  custom_components.media_player.floorplan_speaker: warn
   py.warnings: error
   root: warn

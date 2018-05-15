@@ -10,6 +10,10 @@ sleep_lockout:
   name: Sleep Automations
   initial: off
   icon: mdi:hotel
+presence_lockout:
+  name: Presence Automations
+  initial: on
+  icon: mdi:home
 ha_uptime:
   name: Home Assistant Uptime
   initial: on

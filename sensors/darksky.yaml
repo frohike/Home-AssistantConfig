@@ -1,28 +1,32 @@
-platform: darksky
-api_key: !secret dark_sky_api
-update_interval:
-  minutes: 10
-monitored_conditions:
-  - summary
-  - icon
-  - nearest_storm_distance
-  - precip_type
-  - precip_intensity
-  - precip_probability
-  - temperature
-  - apparent_temperature
-  - wind_speed
-  - wind_bearing
-  - cloud_cover
-  - humidity
-  - pressure
-  - visibility
-  - ozone
-  - minutely_summary
-  - hourly_summary
-  - daily_summary
-  - temperature_max
-  - temperature_min
-  - apparent_temperature_max
-  - apparent_temperature_min
-  - precip_intensity_max
+- platform: darksky
+  api_key: !secret dark_sky_api
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - temperature_max
+    - temperature_min
+    - apparent_temperature_max
+    - apparent_temperature_min
+    - precip_intensity_max
+  update_interval:
+    days: 0
+    hours: 0
+    minutes: 30
+    seconds: 0
+    milliseconds: 0

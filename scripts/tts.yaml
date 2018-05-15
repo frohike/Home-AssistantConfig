@@ -8,7 +8,7 @@ tts_alexa_on_crickets:
       data_template:
         entity_id: media_player.chromecastaudiokitchen
         message: >
-          Okey Google, tell sleep sounds to turn on crickets.
+          Alexa, tell sleep sounds to turn on crickets.
 
 tts_alexa_on_npr:
   alias: Alexa Turn on NPR
@@ -17,7 +17,7 @@ tts_alexa_on_npr:
       data_template:
         entity_id: media_player.chromecastaudiokitchen
         message: >
-          Okey Google, play NPR everywhere.
+          Alexa, play NPR everywhere.
 
 tts_alexa_shut_up:
   alias: Shut Up Alexa
@@ -26,7 +26,7 @@ tts_alexa_shut_up:
       data_template:
         entity_id: media_player.chromecastaudiokitchen
         message: >
-          Okey Google, shut up.
+          Alexa, shut up.
 
 #
 # Laundry is Ready
@@ -52,8 +52,8 @@ tts_wake_up:
       data_template:
         entity_id: media_player.chromecastaudiokitchen
         message: >
-          Good morning {%if is_state('device_tracker.brad','home')%}Brad{%endif%}, the time is now {{states.sensor.time.state}}.
-          {% if is_state('device_tracker.brad','home') %}
+          Good morning {%if is_state('device_tracker.nexus_5x','home')%}Bjorn{%endif%}, the time is now {{ states("sensor.time") }}.
+          {% if is_state('device_tracker.nexus_5x','home') %}
               {% if is_state('sensor.cal_work_today','True') %}
               Work is at {{states.cal_work_location.state}} at {{states.cal_work_call_time.state}} today.
               {% endif %}
@@ -88,8 +88,7 @@ tts_morning_info:
           You have an event today, {{states.sensor.cal_fb_event.state}}, starting at {{states.sensor.cal_fb_time.state}}.
           {% endif %}
 
-          The time is now {{ now().hour}}  {{ "%0.02d" | format(now().strftime("%-M") | int) }}.
-          Alexa, turn on NPR everywhere.
+          The time is now {{ states("sensor.time") }}.
 
 #
 # Using my plant_problems.py python script

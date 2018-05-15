@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "home-assistant/sensornodelivingroom"
+  name: "Vardagsrummet PIR"
+  value_template: '{{ value_json.motion }}'

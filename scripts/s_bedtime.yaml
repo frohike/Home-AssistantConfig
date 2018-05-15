@@ -1,15 +1,24 @@
 bedtime:
   sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.bjorn_status
+        option: "Sleeping"
     - service: light.turn_off
       data:
         entity_id:
-          - light.tradfri_bulb_e14_ws_opal_400lm_2
-          - light.tradfri_bulb_e14_ws_opal_400lm_3
           - light.vardagarummet_golv
           - light.vardagsrumsfonster_hoger
           - light.vardagsrumsfonster_vanster
           - light.labtak1
           - light.labtak2
+          - light.labtak3
+          - light.koksbordslampa1
+          - light.koksbordslampa2
+          - light.koksbordslampa3
+          - light.sovrummsfonster
+          - light.taksovrummet
+          - light.taklampa_hallen
         transition: 15
     - service: switch.turn_off
       data:
@@ -25,12 +34,5 @@ bedtime:
           - switch.kontoretfonster
           - switch.vardagsrumgolvlampa
           - switch.vardagsrumvitrinskap
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.bjorn_status
-        option: "Sleeping"
-    - service: tts.google_say
-      entity_id:
-        - media_player.chromecastaudiokitchen
-      data:
-        message: "Powering down. Beep boop! Good night. Sleep tight."
+          - switch.adventsstakekoket
+          - switch.julgranen

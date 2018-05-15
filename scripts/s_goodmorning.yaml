@@ -4,3 +4,5 @@ goodmorning:
       data:
         entity_id: input_select.bjorn_status
         option: "Home"
+    - service: script.turn_on
+      entity_id: script.tts_morning_info

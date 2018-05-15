@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "home-assistant/sensornodegaraget"
+  name: "Garage Humidity"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.humidity | round(1) }}'

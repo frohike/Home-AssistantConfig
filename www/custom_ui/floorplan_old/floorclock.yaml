@@ -1,0 +1,15 @@
+date_format: MMM-DD-YYYY
+#log_level: debug
+
+fully_kiosk:
+
+- name: Bedroom Kiosk
+    address: 38:F7:3D:DB:56:14
+    motion_sensor: binary_sensor.clock_motion
+    plugged_sensor: binary_sensor.clock_plugged
+    screensaver_light: light.clock_screensaver
+    media_player: media_player.bedroom_alarm_panel
+
+pages:
+  -  /local/custom_ui/floorplan/clock.yaml
+  -  /local/custom_ui/floorplan/clock_config.yaml

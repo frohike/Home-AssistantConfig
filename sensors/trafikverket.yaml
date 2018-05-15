@@ -1,0 +1,12 @@
+- platform: trafikverket_weatherstation
+  name: Trafikverket Road WeatherStation storvik
+  api_key: !secret trafikverket_key
+  station: Storvik
+  type: road
+
+- platform: trafikverket_weatherstation
+  name: Trafikverket Air WeatherStation Storvik
+  api_key: !secret trafikverket_key
+  station: Storvik
+  type: air
+  scan_interval: 600

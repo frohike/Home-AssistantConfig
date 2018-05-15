@@ -1,3 +1,10 @@
+
+  family:
+    name: Family
+    entities:
+      - device_tracker.nexus_5x
+      - device_tracker.homeassistant_nexus5x
+
   bedroom_lights_card:
     name: Bedroom
     entities:
@@ -11,9 +18,17 @@
     name: Bjorn Location
     entities:
       - script.owntracks_update
-      - device_tracker.pi_nexus5x
+      - device_tracker.homeassistant_nexus5x
       - sensor.bjorn_n5x_battery
       - input_select.bjorn_status
+
+  breaches_bjorn_card:
+    name: Have I Been pwned Sensors
+    entities:
+      - sensor.breaches_bjornebjornewebnu
+      - sensor.breaches_bjornebjornewebnu_2
+      - sensor.breaches_frohikebjornewebnu
+      - sensor.breaches_bjornjohanssonsubaruclubse
 
   global_scenes_card:
     name: Global Scenes
@@ -36,7 +51,7 @@
       - switch.koketfonster
       - switch.kokhornskap
       - switch.koksbanken
-      - switch.koksfonster_jul
+      - switch.adventsstakekoket
       - group.kitchen_table_lamp
 
   kitchen_table_lamp:
@@ -49,9 +64,10 @@
   kitchen_sensors:
     name: Kitchen Sensors
     entities:
-      - sensor.kn_temperature
-      - sensor.kn_humidity
-      - sensor.kn_pir
+      - sensor.koket_temperature
+      - sensor.koket_humidity
+      - sensor.koket_pir
+      - sensor.koket_ldr
 
   lab_lights_card:
     name: Lab Lights
@@ -60,6 +76,8 @@
       - light.labtak1
       - light.labtak2
       - light.labtak3
+      - switch.led_strip_office_desk
+      - light.office_color_led
       - switch.kontoretfonster
 
   lab_switches_card:
@@ -83,14 +101,34 @@
       - switch.vardagsrumvitrinskap
       - switch.skapetvardagsrummet
       - switch.adventsstackar_vrum
-      - light.vardagarummet_golv
+      - switch.julgranen
+
+  hallway_lights_card:
+    name: Hallway Lights
+    entities:
+      - light.taklampa_hallen
       - switch.hallenvagg
+
+  living_room_sensors_card:
+    name: Living Room Sensors
+    entities:
+      - sensor.vardagsrummet_temperature
+      - sensor.vardagsrummet_humidity
+      - sensor.vardagsrummet_ldr
+      - sensor.vardagsrummet_pir
+
+  vinden_lights_card:
+    name: Vinden lights
+    entities:
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
 
   living_room_devices_card:
     name: Living Room Devices
     entities:
       - media_player.samsung_led55_ue55h6200
       - media_player.kodiVardagsrum
+      - media_player.spotify
 
   octoprint_status_card:
     name: 3D Printer Status
@@ -157,15 +195,18 @@
   temperatures_card:
     name: Temperatures
     entities:
-      - sensor.kn_temperature
-      - sensor.sn1_temperature
       - sensor.utomhus_temperature
+      - sensor.sovrummet_temperature
+      - sensor.koket_temperature
       - sensor.vardagsrummet_temperature
-      - sensor.owm_temperature
+      - sensor.vardagsrummet_temperature
+      - sensor.dark_sky_temperature
 
   weather_card:
     name: Weather
     entities:
+      - sensor.trafikverket_air_weatherstation_storvik
+      - sensor.trafikverket_road_weatherstation_storvik
       - sensor.dark_sky_apparent_temperature
       - sensor.dark_sky_cloud_coverage
       - sensor.dark_sky_daily_high_apparent_temperature
@@ -202,13 +243,102 @@
     name: Sonarr TvShows
     entities:
       - sensor.sonarr_upcoming
+      - sensor.sonarr_series
+      - sensor.sonarr_wanted
+      - sensor.sonarr_queue
       - sensor.sonarr_disk_space
 
   radarr_card:
     name: Radarr Movies
     entities:
       - sensor.radarr_upcoming
+      - sensor.radarr_movies
+      - sensor.radarr_status
       - sensor.radarr_disk_space
+
+######                Collection groups for automations                   ######
+  interior_lights_card:
+    name: 'Interior lights'
+    entities:
+      - light.koksbordslampa
+      - light.labtaklampa
+      - light.sovrummet
+      - light.sovrummsfonster
+      - light.taklampa_hallen
+      - light.taksovrummet
+      - light.toa
+      - light.toa_belysning
+      - light.vardagrum
+      - light.vardagsrumsfonster_hoger
+      - light.vardagsrumsfonster_vanster
+
+  interior_switches_card:
+    name: 'Interior Switches'
+    entities:
+      - switch.adventsstakekoket
+      - switch.computer_screens
+      - switch.golvlampavardagsrum
+      - switch.hallenvagg
+      - switch.koketfonster
+      - switch.kokhornskap
+      - switch.koksbanken
+      - switch.kontoretfonster
+      - switch.skapetvardagsrummet
+      - switch.sovrummetfonster
+      - switch.utomhusaltanen
+      - switch.vardagsrumgolvlampa
+      - switch.vardagsrumvitrinskap
+
+  media_players_card:
+    name: 'Media Players'
+    entities:
+      - media_player.alarm_clock
+      - media_player.bedroom_alarm_panel
+      - media_player.chromecastaudiokitchen
+      - media_player.google_play_music_maincomputer
+      - media_player.kodi
+      - media_player.multiroomplayer
+      - media_player.samsung_led55_ue55h6200
+      - media_player.snapcast_client_3e975729cdf94704bc1db0414d0d1030
+      - media_player.snapcast_client_c08d12e532b24bf69d63d7ba0aea0035
+      - media_player.snapcast_group_861c1b24bdf92202853f259cf65a93cf
+      - media_player.snapcast_group_c8233a3c1f39e4113ada14bdd6e58653
+      - media_player.spotify
+
+  input_boolean_card:
+    name: "Input Booleans"
+    entities:
+      - input_boolean.alarmweekday
+      - input_boolean.alert_mode
+      - input_boolean.clock_snooze
+      - input_boolean.color_tornado
+      - input_boolean.flash
+      - input_boolean.good_morning
+      - input_boolean.good_night
+      - input_boolean.guard_dog
+      - input_boolean.guest_mode
+      - input_boolean.ha_uptime
+      - input_boolean.home_stats
+      - input_boolean.house_station
+      - input_boolean.lastmsg
+      - input_boolean.meal_time
+      - input_boolean.media_lockout
+      - input_boolean.nothome_mode
+      - input_boolean.presence_armed
+      - input_boolean.presence_lockout
+      - input_boolean.responsibilities
+      - input_boolean.school_mode
+      - input_boolean.self_destruct
+      - input_boolean.sleep_lockout
+      - input_boolean.sleepy_dog
+      - input_boolean.speech_notifications
+      - input_boolean.tv
+      - input_boolean.tv_time
+      - input_boolean.work
+      - input_boolean.work_mode
+
+######                     The END of collect groups                      ######
+###### Start of View cards for the home-assistant webpage.                ######
 
   bedroom_view:
     name: Bedroom
@@ -217,7 +347,8 @@
       - group.bedroom_lights_card
       - group.bedroom_sensors_card
       - group.alarm_clock_card
-      - media_player.bjornecast
+      - media_player.alarm_clock
+      - media_player.multiroomplayer
       - script.bedtime
 
   lab_view:
@@ -226,14 +357,8 @@
     entities:
       - group.lab_lights_card
       - group.lab_switches_card
-      - group.strip_cord_card
       - group.octoprint_status_card
-      - group.fibaro_multisensor_card
-      - group.sensor_node_1_card
-      - media_player.lab
-      - cover.blinds1
-      - group.blinds_card
-      - group.pir_card
+      - media_player.google_play_music_maincomputer
 
   kitchen_view:
     name: Kitchen
@@ -241,9 +366,10 @@
     entities:
       - group.kitchen_lights_card
       - group.kitchen_sensors
-      - group.laundry_card
-      - group.sense_card
+      - group.vinden_lights_card
       - media_player.chromecastaudiokitchen
+      - media_player.google_play_music_maincomputer
+      - media_player.spotify
 
   living_room_view:
     name: Living Room
@@ -251,13 +377,19 @@
     entities:
       - group.living_room_lights_card
       - group.living_room_devices_card
-      - group.living_room_sensors
-      - group.media_equipment_card
+      - group.living_room_sensors_card
       - group.sonarr_card
       - group.radarr_card
+      - group.media_equipment_card
       - media_player.samsung_led55_ue55h6200
       - media_player.kodiVardagsrum
       - media_player.kodi
+
+  hallway_room_view:
+    name: Hallway
+    view: yes
+    entities:
+      - group.hallway_lights_card
 
   climate_view:
     name: Climate
@@ -276,8 +408,8 @@
     entities:
       - group.bjorn_phone_sensors
       - group.time_travel_card
+      - group.breaches_bjorn_card
       - group.bjorn_locations_card
-      - group.tracker_ble_happy_bubbles_card
 
   outside_view:
     name: Outside
@@ -293,7 +425,7 @@
       - group.system_lockouts_card
       - group.system_sensors_card
       - group.all_switches
-      - group.input_boolean
+      - group.input_boolean_card
       - group.all_switches
       - group.all_automations
       - group.all_covers
@@ -304,9 +436,19 @@
   default_view:
     view: yes
     entities:
-      - group.bjorn_locations_card
+      - device_tracker.homeassistant_nexus5x
+      - sensor.utomhus_temperature
+      - sensor.sovrummet_temperature
+      - sensor.koket_temperature
+      - sensor.vardagsrummet_temperature
+      - sensor.garage_temperature
+      - sensor.tradfri_motion_sensor
+      - sensor.tradfri_remote_control
+      - binary_sensor.iss
+      - binary_sensor.octoprint_printing
+      #- group.bjorn_locations_card
       - group.time_travel_card
-      - group.temperatures_card
+      #- group.temperatures_card
       - group.octoprint_status_card
       - sensor.octoprint_job_percentage
       - group.weather_card

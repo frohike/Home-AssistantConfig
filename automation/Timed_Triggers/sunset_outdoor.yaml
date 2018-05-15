@@ -1,0 +1,23 @@
+- alias: 'Sunset turn on outdoor lamps'
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      to: 'below_horizon'
+      from: 'above_horizon'
+
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.baksidan
+          - light.garage_porten
+          - light.lampabron
+    - service: script.notify_engine
+      data_template:
+        value1: 'Since it gets dark around sunset, I turn on the landscaping lights.'
+        who: 'bjorn'
+    - delay: '00: {{ (range(1, 20)|random|int) }}:00'
+    - service: script.speech_engine
+      data:
+        call_dark_outside: 1

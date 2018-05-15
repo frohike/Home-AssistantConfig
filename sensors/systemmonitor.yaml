@@ -1,0 +1,11 @@
+- platform: rest
+  scan_interval: 86400
+  resource: http://ip.jsontest.com
+  name: External IP
+  value_template: '{{ value_json.ip }}'
+
+- platform: template
+  sensors:
+    ipchange:
+     friendly_name: Ip changed
+     value_template: "{%- if is_state('sensor.external_ip', '83.216.105.106') -%} False {%- elif is_state('sensor.external_ip', 'unknown' ) -%} False {%- else -%} True {%- endif %}"

@@ -1,0 +1,20 @@
+- alias: 'Set my status'
+  trigger:
+    - platform: state
+      entity_id: group.family
+      to: 'not_home'
+
+  condition:
+    - condition: state
+      entity_id: group.family
+      state: 'not_home'
+
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.bjorn_status
+        option: "Away"
+    - service: notify.bjorn
+      data_template:
+        title: 'Bjorn is Living'
+        message: 'Bjorn is now {{ states.input_select.bjorn_status.state }}'

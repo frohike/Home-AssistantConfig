@@ -1,0 +1,57 @@
+- alias: 'Turn off lights on sunrise'
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: '-00:20:00'
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.baksidan
+          - light.garage_porten
+          - light.koksbordslampa
+          - light.koksbordslampa1
+          - light.koksbordslampa2
+          - light.koksbordslampa3
+          - light.labtak1
+          - light.labtak2
+          - light.labtak3
+          - light.labtaklampa
+          - light.lampabron
+          - light.sovrummet
+          - light.sovrummsfonster
+          - light.taklampa_hallen
+          - light.taksovrummet
+          - light.utomhus
+          - light.vardagrum
+          - light.vardagsrumsfonster_hoger
+          - light.vardagsrumsfonster_vanster
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.julgranen
+          - switch.adventsstakekoket
+          - switch.golvlampavardagsrum
+          - switch.hallenvagg
+          - switch.koketfonster
+          - switch.kokhornskap
+          - switch.koksbanken
+          - switch.kontoretfonster
+          - switch.skapetvardagsrummet
+          - switch.sovrummetfonster
+          - switch.utomhusaltanen
+          - switch.vardagsrumgolvlampa
+          - switch.vardagsrumvitrinskap
+
+    - service: script.notify_engine
+      data_template:
+        value1: >
+          {{ [
+            "Even though they are sleeping, I still turn off the outdoor lights before sunrise.",
+            "It was a beautiful sunrise.  Time to turn off the exterior lights.",
+            "If the sun is out, we do not need the exterior lights on.",
+            "The sun is up so it's time to turn the outside lights off.  Lucky for my family, I have them covered!"
+            ] | random + "#HomeAutomation"}}
+        who: bjorn
+    - delay: '00:{{ (range(1, 55)|random|int) }}:00'

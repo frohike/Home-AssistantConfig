@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: floorplan/kiosk/bedroom
+name: Bedroom Kiosk
+retain: true

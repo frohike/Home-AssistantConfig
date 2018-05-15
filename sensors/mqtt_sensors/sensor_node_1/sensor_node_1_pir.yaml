@@ -1,4 +1,4 @@
-platform: mqtt
-state_topic: "home-assistant/sensornode1"
-name: "SN1 PIR"
-value_template: '{{ value_json.motion }}'
+- platform: mqtt
+  state_topic: "home-assistant/sensornode1"
+  name: "Sovrummet PIR"
+  value_template: '{{ value_json.motion }}'

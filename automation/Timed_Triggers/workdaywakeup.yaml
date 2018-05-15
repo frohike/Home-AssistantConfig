@@ -1,0 +1,41 @@
+- alias: 'Timed 0525'
+  trigger:
+    - platform: time
+      at: '05:25:00'
+
+
+  condition:
+    - condition: state
+      entity_id: group.family
+      state: home
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'on'
+    - condition: sun
+      before: sunrise
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.sovrummsfonster
+          - light.vardagsrumsfonster_hoger
+          - light.vardagsrumsfonster_vanster
+          - light.taklampa_hallen
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.koksbanken
+          - switch.kokhornskap
+          - switch.koketfonster
+
+    - delay: '00:10:00'
+    - service: script.turn_on
+      entity_id: script.goodmorning

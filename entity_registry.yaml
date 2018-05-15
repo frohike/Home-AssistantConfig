@@ -1,0 +1,116 @@
+light.hue_white_lamp_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:29:53:6a-0b
+light.hue_white_lamp_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:2b:6c:d3-0b
+media_player.bjornecast:
+  name:
+  platform: cast
+  unique_id: 2d43d085-a5c3-8e42-830f-badba810791c
+media_player.chromecastaudiokitchen:
+  name:
+  platform: cast
+  unique_id: 7b4946ce-c709-7939-18b0-5b48da7bbd32
+media_player.plex_web_chrome:
+  name:
+  platform: plex
+  unique_id: tddk4q5nyldlhz82x1uwy1ev
+media_player.tv_ue55h6200:
+  name:
+  platform: plex
+  unique_id: jhcm4m3hmetgm
+media_player.plex_web_chrome_2:
+  name:
+  platform: plex
+  unique_id: 5q9mq9pdtf33v0aei3zhjlsx
+light.baksidan:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65540
+light.koksbordslampa3:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65539
+light.taksovrummet:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65547
+light.labtak2:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65544
+light.vardagsrumsfonster_hoger:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65546
+light.labtak1:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65543
+light.labtak3:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65550
+light.koksbordslampa2:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65549
+light.sovrummsfonster:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65538
+light.taklampa_hallen:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65537
+light.garage_porten:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65542
+light.lampabron:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65541
+light.koksbordslampa1:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65548
+light.toa_belysning:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65555
+light.vardagsrumsfonster_vanster:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c4d5204400079-65545
+light.vardagrum:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-191481
+light.utomhus:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-191479
+light.tradfri_group:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-191478
+light.labtaklampa:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-163013
+light.toa:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-191484
+light.sovrummet:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-191480
+light.koksbordslampa:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c4d5204400079-153061

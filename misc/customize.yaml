@@ -1,7 +1,5 @@
-############ 3D Printing Octoprint #######################
-    sensor.octoprint_actual_bed_temp:
-      friendly_name: Bed Currently
-      icon: mdi:thermometer
+
+
     sensor.octoprint_actual_tool0_temp:
       friendly_name: Hot End Currently
       icon: mdi:thermometer
@@ -23,11 +21,18 @@
       icon: mdi:thermometer
     sensor.octoprint_temperatures:
       hidden: yes
+    media_player.bcrcc:
+      friendly_name: Chromecast
 
 ########CUSTOMIZE DEVICES########
-    device_tracker.pi_nexus5x:
-       entity_picture:  /local/bjorns.jpg
-       friendly_name: Björn
+    device_tracker.homeassistant_nexus5x:
+      friendly_name: Björn - mobile
+      mac: 78:F8:82:B7:96:23
+      picture: /local/bjorns.jpg
+      icon: mdi:cellphone-android
+      track: yes
+      hide_if_away: no
+
 
 ######CUSTOMIZE MEDIA PLAYERS######
     media_player.chromecastaudiokitchen:
@@ -36,12 +41,16 @@
     media_player.bjornecast:
        friendly_name: Chromecast sovrummet
        icon: mdi:google-chrome
-    media_player.vardagsrums_tv:
+    media_player.samsung_led55_ue55h6200:
        friendly_name: Samsung TV i Vardagsrummet
        icon: mdi:projector-screen
     media_player.kodivardagsrum:
        friendly_name: Kodi koplad till TV i vardags rummet
        icon: mdi:projector-screen
+    media_player.snapcast_client_c08d12e532b24bf69d63d7ba0aea0035:
+       friendly_name: SnapClient vardagsrum
+       icon: mdi:surround-sound
+
 #######CUSTOMIZE SWITCHES########
 ####RF####
     switch.vardagsrumfonster:
@@ -107,6 +116,11 @@
        friendly_name: Kök bordslampa
        icon: mdi:lamp
 
+
+    switch.wake_on_lan:
+      friendly_name: PC
+      icon: mdi:power
+
 ##############HA####
     input_boolean.ha_uptime:
       hidden: yes
@@ -124,3 +138,18 @@
       hidden: no
     group.all_devices:
       hidden: no
+
+    script.speech_processing:
+      friendly_name: 'Voice Processing'
+      emulated_hue_hidden: True
+      hidden: True
+
+    script.speech_engine:
+      friendly_name: 'Voice Notify'
+      emulated_hue_hidden: True
+      hidden: True
+
+
+    switch.strip_cord:
+      friendly_name: Mini
+      icon: mdi:printer-3d

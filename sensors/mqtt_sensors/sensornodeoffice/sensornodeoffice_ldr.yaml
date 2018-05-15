@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "home-assistant/sensornodeoffice"
+  name: "Office LDR"
+  unit_of_measurement: "LUX"
+  value_template: '{{ value_json.ldr }}'

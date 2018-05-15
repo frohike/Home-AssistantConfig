@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1920px"
+   height="1080px"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="floorplan.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.89608651"
+     inkscape:cx="574.68219"
+     inkscape:cy="406.65406"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2987"
+     inkscape:window-height="1402"
+     inkscape:window-x="63"
+     inkscape:window-y="662"
+     inkscape:window-maximized="0" />
+  <defs
+     id="defs823" />
+  <metadata
+     id="metadata826">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke-width:0.91918516"
+       id="rect5614"
+       width="1952.7712"
+       height="1257.7953"
+       x="-18.888773"
+       y="-19.988947"
+       ry="9.1610851" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:108.24669647px;line-height:0;font-family:'28 Days Later';-inkscape-font-specification:'28 Days Later Bold';letter-spacing:0px;word-spacing:0px;opacity:0.71499999;fill:#ccff00;fill-opacity:1;stroke:none;stroke-width:1.12756979;stroke-opacity:1"
+       x="222.68512"
+       y="120.11196"
+       id="text5619"
+       transform="scale(0.88686311,1.1275697)"><tspan
+         sodipodi:role="line"
+         id="tspan5617"
+         x="222.68512"
+         y="120.11196"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1.12756979;stroke-opacity:1">Home MARVIN Interface</tspan></text>
+    <rect
+       style="opacity:0.54599998;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1.12756979"
+       id="sensor.dark_sky_icon"
+       width="117.27205"
+       height="134.7108"
+       x="1784.9449"
+       y="24.365114"
+       ry="0"
+       inkscape:label="#rect5623" />
+    <path
+       style="fill:none;stroke:#333333;stroke-width:7.55905533;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -155.86208,148.81876 H 1471.4909 l 132.5003,-250.77243"
+       id="path7938"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#ffcc00;stroke-width:7.55905533;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -143.30303,168.71122 H 1484.0499 l 132.5003,-250.772429"
+       id="path7938-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:5.39720774;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1459"
+       width="285.68671"
+       height="87.045166"
+       x="42.406612"
+       y="188.345"
+       ry="19.912292" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:53.33333206px;line-height:0;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="179.11168"
+       y="246.84012"
+       id="text1466"><tspan
+         sodipodi:role="line"
+         id="tspan1464"
+         x="179.11168"
+         y="246.84012">Home</tspan></text>
+  </g>
+</svg>

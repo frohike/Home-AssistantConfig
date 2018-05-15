@@ -3,6 +3,8 @@
 *.csr
 *.crt
 *.key
+*.pickle
+*.conf
 OZW_Log.txt
 home-assistant.log
 home-assistant_v2.db
@@ -12,6 +14,7 @@ deps
 tts
 secrets.yaml
 known_devices.yaml
+google_calendars.yaml
 *.conf
 plex.conf
 phue.conf

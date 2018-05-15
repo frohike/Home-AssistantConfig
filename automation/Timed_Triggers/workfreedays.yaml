@@ -1,0 +1,30 @@
+- alias: 'Work free days'
+  trigger:
+    - platform: time
+      at: '07:00:00'
+  condition:
+    - condition: state
+      entity_id: group.family
+      state: home
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'off'
+    - condition: sun
+      before: sunrise
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.vardagsrumsfonster_hoger
+          - light.vardagsrumsfonster_vanster
+          - light.sovrummsfonster
+          - light.taklampa_hallen
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.koketfonster
+          - switch.kokhornskap
+          - switch.koksbanken
+          - switch.kontoretfonster
+          - switch.adventsstakekoket
+          - switch.julgranen

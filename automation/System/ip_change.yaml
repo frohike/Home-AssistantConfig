@@ -1,0 +1,15 @@
+- alias: "Notify me if my ip changes at home"
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.ipchange
+      from: 'False'
+      to: 'True'
+
+  action:
+    - service: script.notify_engine
+      data_template:
+        value1: 'Changed IP address:'
+        value2: "New IP {{ states('sensor.external_ip') }}"
+        value3: ' - Log in and change the ip address'
+        who: 'bjorn'

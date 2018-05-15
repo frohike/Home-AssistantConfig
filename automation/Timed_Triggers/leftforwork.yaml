@@ -1,0 +1,58 @@
+- alias: 'Left home for work'
+  trigger:
+    - platform: time
+      at: '07:10:00'
+
+  condition:
+    - condition: state
+      entity_id: group.family
+      state: home
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'on'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.koksbordslampa
+          - light.koksbordslampa1
+          - light.koksbordslampa2
+          - light.koksbordslampa3
+          - light.labtak1
+          - light.labtak2
+          - light.labtak3
+          - light.labtaklampa
+          - light.sovrummsfonster
+          - light.taklampa_hallen
+          - light.taksovrummet
+          - light.vardagsrumsfonster_hoger
+          - light.vardagsrumsfonster_vanster
+
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.julgranen
+          - switch.adventsstakekoket
+          - switch.golvlampavardagsrum
+          - switch.hallenvagg
+          - switch.koketfonster
+          - switch.kokhornskap
+          - switch.koksbanken
+          - switch.kontoretfonster
+          - switch.skapetvardagsrummet
+          - switch.sovrummetfonster
+          - switch.vardagsrumgolvlampa
+          - switch.vardagsrumvitrinskap
+
+    - service: notify.bjorn
+      data_template:
+        title: 'Turning off all lights indoors'
+        message: 'Marvin: You have left me.. and the lights where on so I have turnd them off now.'

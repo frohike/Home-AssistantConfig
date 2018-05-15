@@ -1,0 +1,13 @@
+message_temperature_ecobee:
+  sequence:
+    - service: notify.bjorn
+      data_template:
+        message: "The main floor current temperature is {{ states('sensor.kn_temperature') }}"
+message_temperature_push:
+  sequence:
+    - service: notify.bjorn
+      data_template:
+        message: "The main floor current temperature is {{ states('sensor.kn_temperature') }}"
+    - service: notify.bjorn
+      data_template:
+        message: "The main floor current temperature is {{ states('sensor.kn_temperature') }}"

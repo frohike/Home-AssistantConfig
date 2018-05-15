@@ -4,9 +4,19 @@ guest_mode:
   initial: off
 
 school_mode:
-  name: Work Day
+  name: School Mode
+  icon: mdi:school
+  initial: on
+
+work_mode:
+  name: Work Mode
   icon: mdi:worker
   initial: on
+
+nothome_mode:
+  name: Not Home mode
+  icon: mdi:away
+  initial: off
 
 alert_mode:
   name: Alert Mode
@@ -17,3 +27,37 @@ speech_notifications:
   name: Speech Notifications
   icon: mdi:speaker-wireless
   initial: on
+
+tv:
+  name: TV
+  initial: off
+  icon: mdi:TV
+
+media_lockout:
+  name: Media Automations
+  initial: off
+  icon: mdi:television
+
+sleep_lockout:
+  name: Sleep Automations
+  initial: off
+  icon: mdi:hotel
+
+presence_lockout:
+  name: Presence Automations
+  initial: on
+  icon: mdi:home
+
+ha_uptime:
+  name: Home Assistant Uptime
+  initial: on
+
+presence_armed:
+  name: Presence Armed
+  initial: off
+  icon: mdi:account-multiple
+
+alarmweekday:
+  name: Weekdays Only
+  initial: on
+  icon: mdi:calendar
