@@ -1,0 +1,288 @@
+homeassistant:
+  name: MARVIN
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include misc/customize.yaml
+  packages: !include_dir_named packages
+
+frontend:
+
+http:
+  api_password: !secret api_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+  server_port: !secret server_port
+  #base_url: home.bjorneweb.nu:8123
+  cors_allowed_origins:
+    - https://google.com
+    - https://home-assistant.io
+  use_x_forwarded_for: False
+  trusted_networks:
+    - !secret trusted_ip
+    - !secret trusted_ip_2
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:security-home
+    url_path: floorplan
+    config:
+      hide_app_toolbar:
+      config:  /local/custom_ui/floorplan/floorplan.yaml
+
+  - name: clock
+    sidebar_title: Alarm Clock
+    sidebar_icon: mdi:alarm
+    url_path: clock
+    config:
+      hide_app_toolbar:
+      config: /local/custom_ui/floorplan/floorclock.yaml
+config:
+
+conversation:
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+  - platform: nmap_tracker
+    hosts: !secret nmap_ip
+
+discovery:
+
+history:
+
+logbook:
+logger: !include logger.yaml
+
+media_player:
+  - platform: cast
+  - platform: kodi
+    host: !secret kodi_ip
+    tcp_port: 8080
+  - platform: snapcast
+    host: 192.168.0.37
+  - platform: mpd
+    name: MultiroomPlayer
+    host: 192.168.0.37
+    location: Multiroom
+  - platform: gpmdp
+    name: Google Play Music Maincomputer
+    host: 192.168.0.185
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
+
+  - platform: plex
+    entity_namespace: 'plex'
+    include_non_clients: true
+    scan_interval: 5
+    show_all_controls: false
+    use_custom_entity_ids: true
+    use_episode_art: true
+    remove_unavailable_clients: true
+    client_remove_interval: 600
+
+mqtt:
+  broker: !secret mqtt_broker_ip
+  port: !secret mqtt_port
+  client_id: home-assistant-1
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  discovery: true
+  discovery_prefix: homeassistant
+
+notify:
+  - name: bjorn
+    platform: pushbullet
+    api_key: !secret pushbullet_api
+
+recorder:
+  purge_interval: 2
+  purge_keep_days: 5
+  exclude:
+    domains:
+      - updater
+      - automation
+    entities:
+      - group.motion
+      - group.doors
+      - sensor.floorplan_date
+      - sensor.floorplan_time
+      - sensor.ha_uptime
+      - sensor.time
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_cloud_coverage
+      - sensor.dark_sky_daily_high_apparent_temperature
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_apparent_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.dark_sky_daily_max_precip_intensity
+      - sensor.dark_sky_daily_summary
+      - sensor.dark_sky_hourly_summary
+      - sensor.dark_sky_humidity
+      - sensor.dark_sky_icon
+      - sensor.dark_sky_minutely_summary
+      - sensor.dark_sky_nearest_storm_distance
+      - sensor.dark_sky_ozone
+      - sensor.dark_sky_precip
+      - sensor.dark_sky_precip_intensity
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_pressure
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - sensor.dark_sky_visibility
+      - sensor.dark_sky_wind_bearing
+      - sensor.dark_sky_wind_speed
+      - sensor.weather_apparent_temperature
+      - sensor.weather_humidity
+      - sensor.weather_icon
+      - sensor.weather_precip_intensity
+      - sensor.weather_precip_probability
+      - sensor.weather_summary
+      - sensor.weather_temperature
+      - sensor.weather_hourly_summary
+      - sensor.weather_daily_summary
+      - sensor.weather_wind_speed
+      - sun.sun
+
+sun:
+
+
+updater:
+
+hassio:
+
+
+tts:
+  - platform: google
+    language: 'sv'
+  - platform: amazon_polly
+    aws_access_key_id: !secret aws_key_id
+    aws_secret_access_key: !secret aws_access_key
+    region_name: 'us-east-1'
+    voice: Joanna
+
+###########INCLUDES#####
+#automation: !include automations.yaml
+automation: !include_dir_merge_list automation
+cover: !include_dir_list covers/
+input_boolean: !include_dir_merge_named input_boolean
+#input_boolean: !include misc/input_boolean.yaml
+input_select: !include misc/input_select.yaml
+input_number: !include misc/input_slider.yaml
+binary_sensor: !include_dir_list binary_sensors/
+sensor: !include_dir_merge_list sensors
+light: !include_dir_list lights/
+switch: !include_dir_list switches/
+script: !include_dir_merge_named scripts/
+group: !include groups.yaml
+weather: !include_dir_list weather/
+weblink: !include misc/weblinks.yaml
+zone: !include_dir_list zones/
+#camera: !include_dir_list cameras/
+tellduslive:
+
+##########OTHER#####
+
+emulated_hue:
+  type: google_home
+  listen_port: 80
+  host_ip: !secret pi_ip
+  expose_by_default: true
+  off_maps_to_on_domains:
+    - scripts
+  exposed_domains:
+    - cover
+    - fan
+    - light
+    - switch
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+ifttt:
+  key: !secret ifttt_api
+
+octoprint:
+  host: !secret octoprint_ip
+  api_key: !secret octoprint_api
+  bed: false
+  number_of_tools: 1
+
+
+
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - light.sovrummsfonster
+        - light.vardagsrumsfonster_hoger
+        - light.vardagsrumsfonster_vanster
+        - light.koksbordslampa
+        - light.koksbordslampa1
+        - light.koksbordslampa2
+        - light.koksbordslampa3
+        - light.labtak1
+        - light.labtak2
+        - light.labtak3
+        - light.lampabron
+        - light.taksovrummet
+        - light.taklampa_hallen
+        - light.hue_white_lamp_1
+        - light.hue_white_lamp_2
+        - switch.koksbanken
+        - switch.kokhornskap
+        - switch.kontoretfonster
+        - switch.hallenvagg
+alexa:
+intent_script:
+  KitchenTemp:
+    speech:
+      type: plain
+      text:
+        The current temperature in the kitchen is {{ states('sensor.kitchentemp') }} degrees.
+  BedroomTemp:
+    speech:
+      type: plain
+      text:
+        The current temperature in the bedroom is {{ states('sensor.bedroomtemp') }} degrees.
+  GoodNight:
+    action:
+      service: script.turn_on
+      entity_id: script.bedtime
+    speech:
+      type: plain
+      text: !include templates/alexa_confirm.yaml
+
+  GoodMorning:
+    action:
+      service: script.turn_on
+      entity_id: script.goodmorning
+    speech:
+      type: plain
+      text: !include templates/alexa_confirm.yaml
+
+  ActivateScene:
+    action:
+      service: scene.turn_on
+      data_template:
+        entity_id: scence.{{ Scene | replace(" ", "_") }}
+    speech:
+      type: plain
+      text: !include templates/alexa_confirm.yaml
+
+  ActivateScript:
+    action:
+      service: script.turn_on
+      data_template:
+        entity_id: script.{{ Script | replace(" ", "_") }}
+    speech:
+      type: plain
+      text: !include templates/alexa_confirm.yaml
