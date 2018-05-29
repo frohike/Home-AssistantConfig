@@ -77,9 +77,6 @@
        friendly_name: Sovrum's Fönster
        icon: mdi:lamp
 ##### Köket #############
-    switch.koketfonster:
-       friendly_name: Kök's Fönster lampor
-       icon: mdi:lamp
     switch.kokhornskap:
        friendly_name: Kök Hörnskåpet
        icon: mdi:lightbulb

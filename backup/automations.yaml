@@ -51,8 +51,8 @@
   action:
   - data:
       entity_id:
-      - switch.kontoretfonster
-      - switch.koketfonster
+      - 
+      
       - switch.adventsstakekoket
       - switch.hallenvagg
     service: switch.turn_on
@@ -85,7 +85,7 @@
       entity_id:
       - switch.koksbanken
       - switch.kokhornskap
-      - switch.koketfonster
+      
       - switch.hallenvagg
     service: switch.turn_on
   alias: wakeup_weekdays
@@ -108,7 +108,7 @@
       entity_id:
       - switch.koksbanken
       - switch.kokhornskap
-      - switch.koketfonster
+      
       - switch.hallenvagg
     service: switch.turn_off
   - data:
@@ -142,7 +142,7 @@
       entity_id:
       - switch.koksbanken
       - switch.kokhornskap
-      - switch.koketfonster
+      
       - switch.hallenvagg
     service: switch.turn_on
   alias: wakeup_weekend

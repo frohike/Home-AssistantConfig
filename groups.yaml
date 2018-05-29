@@ -48,7 +48,6 @@
   kitchen_lights_card:
     name: Kitchen Lights
     entities:
-      - switch.koketfonster
       - switch.kokhornskap
       - switch.koksbanken
       - switch.adventsstakekoket
@@ -279,10 +278,9 @@
       - switch.computer_screens
       - switch.golvlampavardagsrum
       - switch.hallenvagg
-      - switch.koketfonster
+      - switch.kontoretfonster
       - switch.kokhornskap
       - switch.koksbanken
-      - switch.kontoretfonster
       - switch.skapetvardagsrummet
       - switch.sovrummetfonster
       - switch.utomhusaltanen

@@ -39,14 +39,10 @@
     - service: switch.turn_off
       data:
         entity_id:
-          - switch.julgranen
-          - switch.adventsstakekoket
           - switch.golvlampavardagsrum
-          - switch.hallenvagg
-          - switch.koketfonster
+          - switch.kontoretfonster          
           - switch.kokhornskap
           - switch.koksbanken
-          - switch.kontoretfonster
           - switch.skapetvardagsrummet
           - switch.sovrummetfonster
           - switch.vardagsrumgolvlampa

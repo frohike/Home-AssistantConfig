@@ -87,7 +87,6 @@ rules:
       - switch.vardagsrumgolvlampa
       - switch.vardagsrumvitrinskap
       - switch.hallenvagg
-      - switch.koketfonster
       - switch.kokhornskap
       - switch.koksbanken
       - switch.omstarttelldus

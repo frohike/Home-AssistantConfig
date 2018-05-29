@@ -34,4 +34,3 @@
         entity_id:
           - switch.koksbanken
           - switch.kokhornskap
-          - switch.koketfonster

@@ -22,9 +22,7 @@
     - service: switch.turn_on
       data:
         entity_id:
-          - switch.koketfonster
           - switch.kokhornskap
           - switch.koksbanken
           - switch.kontoretfonster
-          - switch.adventsstakekoket
           - switch.julgranen

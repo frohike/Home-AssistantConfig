@@ -18,8 +18,6 @@
       data:
         entity_id:
           - switch.kontoretfonster
-          - switch.koketfonster
-          - switch.adventsstakekoket
     - service: script.notify_engine
       data_template:
         value1: 'Since it gets dark around sunset, I turn on the landscaping lights.'

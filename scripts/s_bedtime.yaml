@@ -27,11 +27,10 @@ bedtime:
           - switch.extranexa
           - switch.golvlampavardagsrum
           - switch.hallenvagg
-          - switch.koketfonster
+          - switch.kontoretfonster
           - switch.kokhornskap
           - switch.koksbanken
           - switch.koksfonster_jul
-          - switch.kontoretfonster
           - switch.vardagsrumgolvlampa
           - switch.vardagsrumvitrinskap
           - switch.adventsstakekoket
