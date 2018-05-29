@@ -1,0 +1,23 @@
+- alias: 'Goodmorning rutin weekdays'
+  trigger:
+    - platform: time
+      at: '05:35:00'
+
+  condition:
+    - condition: state
+      entity_id: group.family
+      state: home
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'on'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+
+  action:
+    - service: script.turn_on
+      entity_id: script.goodmorning
