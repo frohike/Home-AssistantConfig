@@ -28,6 +28,8 @@
           - light.sovrummsfonster
           - light.vardagsrumsfonster_hoger
           - light.vardagsrumsfonster_vanster
+          - light.koksfonster_vanster
+          - light.koksfonster_hoger
           - light.taklampa_hallen
     - service: switch.turn_on
       data:

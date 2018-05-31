@@ -17,6 +17,8 @@
         entity_id:
           - light.vardagsrumsfonster_hoger
           - light.vardagsrumsfonster_vanster
+          - light.koksfonster_vanster
+          - light.koksfonster_hoger
           - light.sovrummsfonster
           - light.taklampa_hallen
     - service: switch.turn_on

@@ -22,6 +22,8 @@
           - light.sovrummet
           - light.sovrummsfonster
           - light.taklampa_hallen
+          - light.koksfonster_vanster
+          - light.koksfonster_hoger
           - light.taksovrummet
           - light.utomhus
           - light.vardagrum
