@@ -50,15 +50,21 @@
     entities:
       - switch.kokhornskap
       - switch.koksbanken
-      - switch.adventsstakekoket
       - group.kitchen_table_lamp
+      - group.kitchen_windows_lamp
 
   kitchen_table_lamp:
-    name: Köks bords Lampa
+    name: Kitchen table lamp
     entities:
+      - light.kokslampa1
+      - light.kokslampa2
       - light.koksbordslampa1
-      - light.koksbordslampa2
-      - light.koksbordslampa3
+
+  kitchen_windows_lamp:
+    name: Kitchen windows
+    entities:
+      - light.koksfonster_hoger
+      - light.koksfonster_vanster
 
   kitchen_sensors:
     name: Kitchen Sensors
@@ -125,6 +131,7 @@
   living_room_devices_card:
     name: Living Room Devices
     entities:
+      - media_player.plex_web_chrome_2
       - media_player.samsung_led55_ue55h6200
       - media_player.kodiVardagsrum
       - media_player.spotify

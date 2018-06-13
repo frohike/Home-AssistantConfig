@@ -222,25 +222,25 @@ cloud:
   alexa:
     filter:
       include_entities:
-        - light.sovrummsfonster
-        - light.vardagsrumsfonster_hoger
-        - light.vardagsrumsfonster_vanster
-        - light.koksbordslampa
-        - light.koksbordslampa1
-        - light.koksbordslampa2
-        - light.koksbordslampa3
-        - light.labtak1
-        - light.labtak2
-        - light.labtak3
-        - light.lampabron
-        - light.taksovrummet
-        - light.taklampa_hallen
-        - light.hue_white_lamp_1
-        - light.hue_white_lamp_2
-        - switch.koksbanken
-        - switch.kokhornskap
-        - switch.kontoretfonster
-        - switch.hallenvagg
+        - group.all_lights
+        - group.all_switches
+        - group.bedroom_lights_card
+        - group.hallway_lights_card
+        - group.kitchen_lights_card
+        - group.kitchen_table_lamp
+        - group.kitchen_windows_lamp
+        - group.living_room_lights_card
+        - group.vinden_lights_card
+      include_domains:
+        - switch
+        - cover
+        - input_boolean
+    entity_config:
+      group.kitchen_lights_card:
+        display_categories: LIGHT
+      group.bedroom_lights_card:
+        display_categories: LIGHT
+        
 alexa:
 intent_script:
   KitchenTemp:
