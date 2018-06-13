@@ -10,6 +10,8 @@ bedtime:
           - light.vardagarummet_golv
           - light.vardagsrumsfonster_hoger
           - light.vardagsrumsfonster_vanster
+          - light.koksfonster_hoger
+          - light.koksfonster_vanster
           - light.labtak1
           - light.labtak2
           - light.labtak3
