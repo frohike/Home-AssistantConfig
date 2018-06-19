@@ -16,7 +16,6 @@ http:
   ssl_key: !secret ssl_key
   base_url: !secret base_url
   server_port: !secret server_port
-  #base_url: home.bjorneweb.nu:8123
   cors_allowed_origins:
     - https://google.com
     - https://home-assistant.io
@@ -240,7 +239,7 @@ cloud:
         display_categories: LIGHT
       group.bedroom_lights_card:
         display_categories: LIGHT
-        
+
 alexa:
 intent_script:
   KitchenTemp:
