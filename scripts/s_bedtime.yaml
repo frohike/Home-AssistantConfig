@@ -20,7 +20,9 @@ bedtime:
           - light.koksbordslampa3
           - light.sovrummsfonster
           - light.taksovrummet
+          - light.sanglampavanster
           - light.taklampa_hallen
+          - light.labwindow
         transition: 15
     - service: switch.turn_off
       data:
@@ -28,8 +30,6 @@ bedtime:
           - switch.adventsstackar_vrum
           - switch.extranexa
           - switch.golvlampavardagsrum
-          - switch.hallenvagg
-          - switch.kontoretfonster
           - switch.kokhornskap
           - switch.koksbanken
           - switch.koksfonster_jul

@@ -10,6 +10,7 @@
     entities:
       - light.sovrummsfonster
       - light.taksovrummet
+      - light.sanglampavanster
       - sensor.sn1_temperature
       - sensor.sn1_pir
       - sensor.sn1_humidity
@@ -81,9 +82,9 @@
       - light.labtak1
       - light.labtak2
       - light.labtak3
+      - light.labwindow
       - switch.led_strip_office_desk
       - light.office_color_led
-      - switch.kontoretfonster
 
   lab_switches_card:
     name: Lab Switches
@@ -102,6 +103,7 @@
     entities:
       - light.vardagsrumsfonster_hoger
       - light.vardagsrumsfonster_vanster
+      - light.taklampa_vardagrum
       - switch.vardagsrumgolvlampa
       - switch.vardagsrumvitrinskap
       - switch.skapetvardagsrummet
@@ -207,6 +209,20 @@
       - sensor.vardagsrummet_temperature
       - sensor.vardagsrummet_temperature
       - sensor.dark_sky_temperature
+
+  forecast4:
+      name: Four Day Forecast
+      entities:
+       - sensor.pws_weather_1d
+       - sensor.pws_weather_1n
+       - sensor.pws_weather_2d
+       - sensor.pws_weather_2n
+       - sensor.pws_weather_3d
+       - sensor.pws_weather_3n
+       - sensor.pws_weather_4d
+       - sensor.pws_weather_4n
+       - sensor.pws_weather_5d
+       - sensor.pws_weather_5n
 
   weather_card:
     name: Weather
@@ -400,6 +416,7 @@
     name: Climate
     view: yes
     entities:
+      - group.forecast4
       - group.temperatures_card
       - group.humidity_card
       - camera.radar

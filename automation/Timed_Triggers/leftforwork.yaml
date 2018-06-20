@@ -37,16 +37,15 @@
           - light.vardagsrumsfonster_vanster
           - light.koksfonster_vanster
           - light.koksfonster_hoger
+          - light.labwindow
 
     - service: switch.turn_off
       data:
         entity_id:
           - switch.golvlampavardagsrum
-          - switch.kontoretfonster
           - switch.kokhornskap
           - switch.koksbanken
           - switch.skapetvardagsrummet
-          - switch.sovrummetfonster
           - switch.vardagsrumgolvlampa
           - switch.vardagsrumvitrinskap
 

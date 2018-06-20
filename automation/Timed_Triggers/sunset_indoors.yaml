@@ -16,10 +16,8 @@
           - light.koksfonster_hoger
           - light.koksfonster_vanster
           - light.taklampa_hallen
-    - service: switch.turn_on
-      data:
-        entity_id:
-          - switch.kontoretfonster
+          - light.labwindow
+
     - service: script.notify_engine
       data_template:
         value1: 'Since it gets dark around sunset, I turn on the landscaping lights.'
