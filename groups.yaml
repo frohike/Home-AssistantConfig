@@ -79,10 +79,8 @@
     name: Lab Lights
     entities:
       - group.lab_tak_lampa
-      - light.labtak1
-      - light.labtak2
-      - light.labtak3
       - light.labwindow
+      - switch.lights_office_computer_table
       - switch.led_strip_office_desk
       - light.office_color_led
 
@@ -97,6 +95,13 @@
       - light.labtak1
       - light.labtak2
       - light.labtak3
+
+  office_temparatur:
+    name: Office Temparature sensor
+    entities:
+      - sensor.office_temperature_2
+      - sensor.office_humidity_2
+
 
   living_room_lights_card:
     name: Living Room Lights
@@ -164,13 +169,13 @@
       - light.lampabron
       - light.garage_porten
 
-  sensor_node_1_card:
+  sovrummet_sensor_node:
     name: BedRoom Sensor Node
     entities:
-      - sensor.sn1_temperature
-      - sensor.sn1_humidity
-      - sensor.sn1_ldr
-      - sensor.sn1_pir
+      - sensor.sovrummet_temperature
+      - sensor.sovrummet_humidity
+      - sensor.sovrummet_ldr
+      - sensor.sovrummet_pir
 
   Kitchen_node_card:
     name: Kitchen Sensor Node
@@ -316,15 +321,10 @@
       - media_player.alarm_clock
       - media_player.bedroom_alarm_panel
       - media_player.chromecastaudiokitchen
-      - media_player.google_play_music_maincomputer
       - media_player.kodi
-      - media_player.multiroomplayer
       - media_player.samsung_led55_ue55h6200
-      - media_player.snapcast_client_3e975729cdf94704bc1db0414d0d1030
-      - media_player.snapcast_client_c08d12e532b24bf69d63d7ba0aea0035
-      - media_player.snapcast_group_861c1b24bdf92202853f259cf65a93cf
-      - media_player.snapcast_group_c8233a3c1f39e4113ada14bdd6e58653
       - media_player.spotify
+      - media_player.volumio
 
   input_boolean_card:
     name: "Input Booleans"
@@ -366,18 +366,19 @@
     view: yes
     entities:
       - group.bedroom_lights_card
-      - group.bedroom_sensors_card
+      - group.sovrummet_sensor_node
       - group.alarm_clock_card
       - media_player.alarm_clock
       - media_player.multiroomplayer
       - script.bedtime
 
   lab_view:
-    name: Lab
+    name: Office
     view: yes
     entities:
       - group.lab_lights_card
       - group.lab_switches_card
+      - group.office_temparatur
       - group.octoprint_status_card
       - media_player.google_play_music_maincomputer
 
@@ -388,8 +389,7 @@
       - group.kitchen_lights_card
       - group.kitchen_sensors
       - group.vinden_lights_card
-      - media_player.chromecastaudiokitchen
-      - media_player.google_play_music_maincomputer
+      - media_player.volumio
       - media_player.spotify
 
   living_room_view:
@@ -403,7 +403,7 @@
       - group.radarr_card
       - group.media_equipment_card
       - media_player.samsung_led55_ue55h6200
-      - media_player.kodiVardagsrum
+      - media_player.kodi_libreeleclocal
       - media_player.kodi
 
   hallway_room_view:
@@ -463,7 +463,8 @@
       - sensor.sovrummet_temperature
       - sensor.koket_temperature
       - sensor.vardagsrummet_temperature
-      - sensor.garage_temperature
+      - sensor.garage_temperature_2
+      - sensor.office_temperature_2
       - sensor.tradfri_motion_sensor
       - sensor.tradfri_remote_control
       - binary_sensor.iss

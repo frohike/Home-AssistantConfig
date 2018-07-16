@@ -48,6 +48,13 @@ config:
 conversation:
 
 device_tracker:
+  - platform: unifi
+    host: 192.168.0.20
+    verify_ssl: false
+    username: !secret unifi_user
+    password: !secret unifi_pass
+    ssid_filter:
+      - 'bjorneweb'
   - platform: owntracks
     max_gps_accuracy: 200
   - platform: nmap_tracker
@@ -65,15 +72,12 @@ media_player:
   - platform: kodi
     host: !secret kodi_ip
     tcp_port: 8080
-  - platform: snapcast
+  - platform: volumio
     host: 192.168.0.37
-  - platform: mpd
-    name: MultiroomPlayer
-    host: 192.168.0.37
-    location: Multiroom
-  - platform: gpmdp
-    name: Google Play Music Maincomputer
-    host: 192.168.0.185
+    port: 3000
+  - platform: volumio
+    host: 192.168.0.38
+    port: 3000
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
@@ -238,6 +242,8 @@ cloud:
       group.kitchen_lights_card:
         display_categories: LIGHT
       group.bedroom_lights_card:
+        display_categories: LIGHT
+      group.inside_lights:
         display_categories: LIGHT
 
 alexa:

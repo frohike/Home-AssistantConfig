@@ -2,3 +2,13 @@ platform: openweathermap
 api_key: !secret openweather_api_key
 latitude: !secret home_latitude
 longitude: !secret home_longitude
+forcast: true
+monitored_conditions:
+  - weather
+  - temperature
+  - wind_speed
+  - wind_bearing
+  - humidity
+  - clouds
+  - rain
+  - snow
